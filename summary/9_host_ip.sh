@@ -33,7 +33,7 @@ check_ip(){
 		fi
     done
 }
-ping_ip(){
+set_ip(){
 		if ping -c 1 -w 2 $ip &>/dev/null
 		then 
 			echo "The ip is using,please use another ip address"
@@ -80,7 +80,7 @@ main(){
 		;;
 	2)
 		check_ip
-		ping_ip
+		set_ip
 		result=$?
 		if (( $result == 2 ))
 		then
